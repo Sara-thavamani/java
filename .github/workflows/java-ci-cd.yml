@@ -22,7 +22,7 @@ jobs:
       - name: Build Java Application
         run: |
           mvn clean package -DskipTests
-          
+
       - name: Build Docker Image
         run: |
           docker build -t myapp .
