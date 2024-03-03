@@ -20,10 +20,16 @@ jobs:
           distribution: adopt
 
       - name: Build Java Application
-        run: mvn clean package -DskipTests
+        run: |
+          mvn clean package -DskipTests
 
       - name: Build Docker Image
-        run: docker build -t saralaaa/myjavaapp:latest .
+        run: |
+          docker build -t myapp .
+
+      - name: Tag Docker Image
+        run: |
+          docker tag myapp saralaaa/myjavaapp:latest
 
   deploy:
     needs: build
