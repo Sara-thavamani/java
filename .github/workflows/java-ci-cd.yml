@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - name: Log in to Docker Hub
-        run: echo "${{ secrets.JAVA }}" | docker login -u "${{ secrets.saralaaa }}" --password-stdin
+        run: echo "${{ secrets.JAVA }}" | docker login -u "saralaaa" --password-stdin
 
       - name: Tag Docker Image
         run: docker tag myapp saralaaa/myjavaapp:latest
